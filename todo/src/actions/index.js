@@ -1,6 +1,6 @@
 export const ADD_TODO = "ADD_TODO";
 
-let nextTodoId = 0;
+let nextTodoId = 2;
 
 export const addTodo = text => {
   return {

@@ -8,12 +8,7 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 import rootReducer from "./reducers/index"
 
-// function tempReducer() {
-//   return {
-//     value: "Walk the dog.",
-//     completed: false
-//   };
-// }
+
 
 const store = createStore(rootReducer);
 
