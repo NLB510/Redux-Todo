@@ -6,15 +6,16 @@ import App from "./App";
 import { Provider } from "react-redux";
 
 import { createStore } from "redux";
+import rootReducer from "./reducers"
 
-function tempReducer() {
-  return {
-    value: "Walk the dog.",
-    completed: false
-  };
-}
+// function tempReducer() {
+//   return {
+//     value: "Walk the dog.",
+//     completed: false
+//   };
+// }
 
-const store = createStore(tempReducer);
+const store = createStore(rootReducer);
 
 ReactDOM.render(
   <Provider store={store}>
