@@ -6,6 +6,11 @@ const initialState = {
       id: 0,
       value: "Walk the dog.",
       completed: false
+    },
+    {
+      id: 1,
+      value: "Take out the trash",
+      completed: false
     }
   ]
 };
