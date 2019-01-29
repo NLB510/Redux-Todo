@@ -1,4 +1,4 @@
-import { ADD_TODO } from "../actions/index";
+import { ADD_TODO, TOGGLE_TODO } from "../actions/index";
 
 const initialState = [
   {
@@ -9,13 +9,14 @@ const initialState = [
   {
     id: 1,
     value: "Take out the trash",
-    completed: false
+    completed: true
   }
 ];
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODO:
+      console.log("action", action);
       return [
         ...state,
         {
@@ -24,6 +25,23 @@ const reducer = (state = initialState, action) => {
           completed: false
         }
       ];
+    case TOGGLE_TODO:
+      console.log("action", action);
+
+      //maps over todos and changes completed status to matching id todos
+      const completedTodos = state.map(todo => {
+        console.log(todo);
+        if (todo.id === action.payload) {
+          return {
+            ...todo,
+            completed: !todo.completed
+          };
+        }
+        return todo;
+      });
+
+      return completedTodos;
+
     default:
       return state;
   }

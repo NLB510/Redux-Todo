@@ -28,6 +28,10 @@ class TodoForm extends React.Component {
     console.log('submit fired')
     console.log(this.state.inputText)
     this.props.addTodo(this.state.inputText);
+
+    this.setState({
+      inputText: ''
+    })
   };
 
   render() {
