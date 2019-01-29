@@ -1,4 +1,8 @@
-import { ADD_TODO, TOGGLE_TODO } from "../actions/index";
+import { 
+  ADD_TODO, 
+  TOGGLE_TODO, 
+  DELETE_TODO 
+} from "../actions/index";
 
 const initialState = [
   {
@@ -30,7 +34,7 @@ const reducer = (state = initialState, action) => {
 
       //maps over todos and changes completed status to matching id todos
       const completedTodos = state.map(todo => {
-        console.log(todo);
+        // console.log(todo);
         if (todo.id === action.payload) {
           return {
             ...todo,
@@ -41,6 +45,15 @@ const reducer = (state = initialState, action) => {
       });
 
       return completedTodos;
+
+      case DELETE_TODO: 
+      console.log('action', action)
+      const filteredCompletedTodos = state.filter(todo => {
+        return todo.id !== action.payload ? todo : null
+        
+      })
+
+      return filteredCompletedTodos
 
     default:
       return state;

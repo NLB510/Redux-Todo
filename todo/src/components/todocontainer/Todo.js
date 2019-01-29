@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Todo = props => {
-  console.log(props);
+  // console.log(props);
   return (
     <TodoContainer>
       <input
@@ -12,6 +12,7 @@ const Todo = props => {
         onChange={() => props.toggleTodoItem(props.todo.id)}
       />
       <h1>{props.todo.value}</h1>
+      <button onClick={(e) => props.deleteTodoItem(e, props.todo.id)}>Delete</button>
     </TodoContainer>
   );
 };
@@ -21,7 +22,7 @@ const Todo = props => {
 */
 
 const TodoContainer = styled.div`
-  width: 15%;
+  width: 35%;
   margin: 2% auto;
   padding: 10px;
   border: 1px solid black;
